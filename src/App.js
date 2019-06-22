@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import Header from './components/Header'
+import Images from './components/Images'
 
-function App() {
+export default function App() {
+  const [score, setScore] = useState(0)
+  const [highScore, sethighScore] = useState(0)
+  const [message, setMessage] = useState('');
+
+  const handleClick = clickedTwice => {
+    if (clickedTwice) {
+      setScore(0)
+      return setMessage('Incorrect!')
+    }
+
+    let newHighScore = highScore + 1;
+
+    sethighScore(score >= highScore ? newHighScore : highScore)
+    setScore(score + 1)
+    setMessage('Correct')
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Header score={score} highScore={highScore} message={message} />
+      <Images clickHandler={handleClick} />
+    </>
+  )
 }
-
-export default App;

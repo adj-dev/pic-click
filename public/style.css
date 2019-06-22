@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  font-family: arial;
+}
+
+span {
+  font-size: 1.5em;
+}
+
+header {
+  display: flex;
+  background-color: #5fe982;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header > div {
+  padding: 0 50px;
+  width: 30%;
+  text-align: center;
+}
+
+#message > span {
+  font-size: 1.7em;
+}
+
+#scoreboard > span {
+  font-size: 1em;
+}
+
+.image-div {
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  transition: .1s ease;
+}
+
+.image-div:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 6px #727272;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  width: 1000px;
+  justify-content: space-between;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  padding-top: 60px;
+}
