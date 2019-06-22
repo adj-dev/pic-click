@@ -1,5 +1,6 @@
 import React from 'react'
 
+// This is the most simple of all the components, literally just renders props from the parent
 export default function Header({ score, highScore, message }) {
   return (
     <header>
